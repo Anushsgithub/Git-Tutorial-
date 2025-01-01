@@ -1,0 +1,137 @@
+div.static{
+    position: static;
+    border: 2px solid ;
+ }
+ div.relative{
+    position: relative;
+    border: 2px solid ;
+ }
+ div.fixed{
+    position: fixed;
+    border: 2px solid ;
+   
+    background-color: aqua;
+ }
+ div.absolute{
+    position: absolute;
+    border: 2px solid ;
+ }
+ div.sticky{
+    position: sticky;
+    border: 2px solid ;
+    background-color: lightgreen;
+ }
+ *{
+  box-sizing:border-box;
+ }
+ .box-container{
+  float: left;
+  width: 33.3%;
+  padding: 5px;
+  height: 500px;
+  /*filter: blur(4px);
+  filter: brightness(90%);
+  filter: contrast(100%);
+  filter: drop-shadow(8px 8px 8px rgb(6, 74, 223));
+  filter: grayscale(60%);
+  filter: hue-rotate(90deg);
+  filter: invert(100%);
+  filter: opacity(50%)
+  filter:saturate(1000%);
+  filter: sepia(60%);
+  clip-path: circle(50% );
+  clip-path: ellipse(45% 35%);
+  clip-path: polygon(50% 0%,100% 50%, 50% 100%,0% 50%);
+  object-fit: contain;*/
+  cursor:;
+ }
+ .clearfix::after{
+  content: "";
+  clear: both;
+  display: table;
+  border-radius: 80%;
+ }
+ ul {
+list-style-type: none;
+margin: 0;
+padding: 0;
+overflow: hidden;
+background-color: #333;
+}
+
+li {
+float: left;
+}
+
+li a {
+display: inline-block;
+color: white;
+text-align: center;
+padding: 14px 16px;
+text-decoration: none;
+}
+
+li a:hover {
+background-color: #111;
+}
+
+.active {
+background-color: red;
+}
+p {
+display: none;
+background-color: yellowgreen;
+padding: 20px;
+}
+
+
+body{
+counter-reset: section ;
+}
+h1{
+counter-reset: subsection ;
+}
+h1::before{
+counter-increment: section;
+content: "Section " counter(section) ". ";
+}
+h2::before{
+counter-increment: subsection ;
+content: counter(section) "." counter(subsection) " ";
+}
+.box{
+   width: 400px;
+   height: 400px;
+   background-color: red;
+   border: 2px solid black;
+   animation-name: example;
+   animation-duration: 5s;
+   border-radius: 25px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin: auto;
+
+  transition: width 2s, height 2s,transform 4s;
+}
+.box:hover{
+ /*transform: scale(0.5);
+   transform: skewY(45deg);
+   transform: translate(-500px);*/
+   width: 600px ;
+   height: 600px;
+   transform: scale(0.5);
+   transform: rotate(360deg);
+}
+p{
+   font-size: 36px;
+}
+@keyframes example {
+   0%   {background-color:red; left:0px; top:0px;}
+   25%  {background-color:yellow; left:200px; top:0px;}
+   50%  {background-color:blue; left:200px; top:200px;}
+   75%  {background-color:green; left:0px; top:200px;}
+   100% {background-color:red; left:0px; top:0px;}   
+}
